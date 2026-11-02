@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>國小高年級朗讀斷句與句型拆解訓練</title>
+<title>國小高年級朗讀斷句與句型拆解訓練 - 朗讀練習 v1.0</title>
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <script>
 tailwind.config={theme:{extend:{colors:{brand:{50:'#f0f9ff',100:'#e0f2fe',500:'#0284c7',600:'#0369a1'}}}}}
@@ -16,16 +16,21 @@ body{font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;ba
 <body class="text-slate-800 antialiased min-h-screen flex flex-col">
 <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
   <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center gap-2 flex-wrap">
-    <h1 class="text-lg md:text-xl font-bold">📖 朗讀斷句與句型拆解大師</h1>
+    <div class="flex items-center gap-2">
+      <h1 class="text-lg md:text-xl font-bold">📖 朗讀斷句與句型拆解大師</h1>
+      <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-brand-100 text-brand-600">朗讀練習 v1.0</span>
+    </div>
     <nav class="flex gap-1" role="tablist">
       <button role="tab" data-tab="library" class="tab px-3 py-2 rounded-lg text-sm">句型實例庫</button>
       <button role="tab" data-tab="practice" class="tab px-3 py-2 rounded-lg text-sm">標記練習 (30句)</button>
+      <button role="tab" data-tab="stories" class="tab px-3 py-2 rounded-lg text-sm">朗讀短文庫 (6篇)</button>
       <button role="tab" data-tab="record" class="tab px-3 py-2 rounded-lg text-sm">錄音檢核</button>
     </nav>
   </div>
 </header>
  
 <main class="max-w-5xl mx-auto px-4 py-6 flex-1 w-full">
+  <!-- 1. 句型實例庫 -->
   <section id="sec-library" class="space-y-5">
     <div class="bg-gradient-to-r from-brand-600 to-indigo-600 rounded-2xl p-6 text-white shadow">
       <h2 class="text-xl font-bold mb-2">💡 為什麼朗讀要學會「斷句」？</h2>
@@ -40,6 +45,7 @@ body{font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;ba
     <div id="examples" class="grid gap-5"></div>
   </section>
  
+  <!-- 2. 標記練習 -->
   <section id="sec-practice" class="hidden">
     <div class="bg-white rounded-2xl p-6 border shadow-sm space-y-5">
       <div class="flex flex-wrap justify-between items-center gap-3">
@@ -67,7 +73,17 @@ body{font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;ba
       <div id="p-feedback" class="hidden rounded-xl p-5 border" aria-live="polite"></div>
     </div>
   </section>
+
+  <!-- 3. 朗讀短文庫 (含多音字與完整斷句標記) -->
+  <section id="sec-stories" class="hidden space-y-5">
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-6 text-white shadow">
+      <h2 class="text-xl font-bold mb-2">📚 朗讀高頻多音字短文特訓</h2>
+      <p class="text-sm md:text-base leading-relaxed">結合教育部審定標準音與長句換氣技巧。點擊短文下方的「聆聽朗讀」按鈕，跟著語音與符號練習，攻克朗讀比賽大魔王！</p>
+    </div>
+    <div id="stories-container" class="grid gap-5"></div>
+  </section>
  
+  <!-- 4. 錄音檢核台 -->
   <section id="sec-record" class="hidden">
     <div class="bg-white rounded-2xl p-6 border shadow-sm space-y-5">
       <div>
@@ -91,14 +107,13 @@ body{font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;ba
   </section>
 </main>
  
-<footer class="bg-white border-t py-4 text-center text-xs text-slate-400">國小高年級國語朗讀教學輔助系統 &copy; 2026</footer>
+<footer class="bg-white border-t py-4 text-center text-xs text-slate-400">國小高年級國語朗讀教學輔助系統（朗讀練習 v1.0） &copy; 2026</footer>
  
 <script>
 const CATS={subject:"主謂賓結構",modifier:"長修飾語結構",logic:"轉折與因果句",parallel:"排比與列舉句"};
 
 // 30句完整題庫
 const DB=[
-  // 主謂賓結構 (1-8)
   {c:"subject",slots:["我們的校長","每天早晨都在操場","熱情地▲鼓勵","跑步運動的▲學生。"],ans:["/","//","/"],
    st:[["主語","我們的校長"],["時間／地點","每天早晨、在操場"],["謂語","熱情地鼓勵"],["賓語","跑步運動的學生"]],
    wrong:"我們的校長每天早晨都 / 在操場熱情地鼓勵跑步 / 運動的學生。",why:"把「都」與「在操場」割裂，又把修飾語「跑步運動的」從中拆開，破壞動作邏輯。"},
@@ -192,9 +207,43 @@ const DB=[
   {c:"parallel",slots:["書本是我們的良師▲益友","書本是我們的心靈▲良藥","書本是我們的啟蒙▲明燈","引領我們走向▲未來。"],ans:["//","//","//"],
    st:[["排比一","書本是我們的良師益友"],["排比二","書本是我們的心靈良藥"],["排比三","書本是我們的啟蒙明燈"],["總結","引領我們走向未來"]],
    wrong:"書本是我們的良師益友書本是 / 我們的心靈良藥書本 / 是我們的啟蒙明燈。",why:"喻體排比句節奏紊亂，失去了讚頌的氣勢。"},
-  {c:"parallel",slots:["聆聽海浪的▲呢喃","聆聽微風的▲輕拂","聆聽大自然的▲樂章","讓我們忘卻所有▲煩惱。"],ans:["//","//","//"],
+  {c:"parallel",slots:["聆聽海浪的▲呢喃","聆聽微風的輕拂","聆聽大自然的▲樂章","讓我們忘卻所有▲煩惱。"],ans:["//","//","//"],
    st:[["排比一","聆聽海浪的呢喃"],["排比二","聆聽微風的輕拂"],["排比三","聆聽大自然的樂章"],["總結","讓我們忘卻所有煩惱"]],
    wrong:"聆聽海浪的呢喃聆聽微風的輕 / 拂聆聽大自然的樂 / 章讓我們忘卻所有煩惱。",why:"動賓結構的排比句沒有做到節奏等長、停頓一致。"}
+];
+
+// 6篇朗讀短文庫資料
+const STORIES = [
+  {
+    title: "第一篇短文：〈友誼的藍色約定〉",
+    focus: "校園生活與多音字訓練（牛仔褲 ㄗˇ、情誼 ㄧˋ）",
+    text: "清晨的陽光灑在校園裡，// 穿著深藍色<span class='text-brand-600 font-bold'>牛仔褲（ㄗˇ）</span>的明遠，// 靜靜地坐在操場旁的長椅上。// 他手裡拿著一封信，// 那是轉學到外地的老朋友寄來的信。// 回想起兩人過去一起在圖書館裡，// 討論著深厚<span class='text-brand-600 font-bold'>情誼（ㄧˋ）</span>的點點滴滴，// 他的心中就充滿了溫暖。// 雖然分開在不同的城市，// 但是，// 他們心中的那份默契，// 卻永遠不會改變。//"
+  },
+  {
+    title: "第二篇短文：〈老街的轉角〉",
+    focus: "環境描寫與多音字訓練（鋪 ㄆㄨ）",
+    text: "走進古色古香的老街，// 兩旁是斑駁的紅磚牆與木造房舍。// 轉角處，// 有一位老爺爺正坐在竹椅上，// 專心地轉動著手中的石磨，// <span class='text-brand-600 font-bold'>鋪（ㄆㄨ）</span>好乾淨的桌巾，// 準備賣香氣四溢的豆漿。// 這裡的一切，// 都讓人暫時忘卻了都市的喧囂。// 只要停下腳步，// 仔細聆聽，// 你就會發現，// 每一塊石板路似乎都在傾訴著歷史的故事。//"
+  },
+  {
+    title: "第三篇短文：〈晨曦中的微光〉",
+    focus: "勵志成長與多音字訓練（角色 ㄐㄧㄝˊ ㄙㄜˋ）",
+    text: "在這齣名為成長的大戲裡，// 每個人都是自己生命的<span class='text-brand-600 font-bold'>角色（ㄐㄧㄝˊ ㄙㄜˋ）</span>。// 學習的道路上，// 難免會遇到重重困難與挑戰。// 因為，// 成功從來不是一蹴可幾的。// 只有當我們面對挫折時，// 依然能夠保持堅定的信念，// 勇敢地迎向前去，// 才能在終點線看見最耀眼的自己。//"
+  },
+  {
+    title: "第四篇短文：〈音樂廳的後台〉",
+    focus: "多音字綜合訓練（樂 ㄩㄝˋ/ㄌㄜˋ、強 ㄐㄧㄤˋ、中 ㄓㄨㄥˋ）",
+    text: "週末的午後，// 學校的管弦<span class='text-brand-600 font-bold'>樂（ㄩㄝˋ）</span>團// 正在音樂廳裡彩排。// 雖然練習的過程十分艱辛，// 個性有些倔<span class='text-brand-600 font-bold'>強（ㄐㄧㄤˋ）</span>的小華，// 但是並沒有因此而放棄。// 他深吸了一口氣，// 調整好心態，// 專心投<span class='text-brand-600 font-bold'>中（ㄓㄨㄥˋ）</span>每一個音符，// 演奏出最令人感動的<span class='text-brand-600 font-bold'>樂（ㄌㄜˋ）</span>章。//"
+  },
+  {
+    title: "第五篇短文：〈阿里山的寶藏〉",
+    focus: "多音字綜合訓練（藏 ㄗㄤˋ/ㄘㄤˊ、省 ㄒㄧㄥˇ/ㄕㄥˇ、血 ㄒㄩㄝˇ）",
+    text: "台灣的山林充滿了豐富的寶<span class='text-brand-600 font-bold'>藏（ㄗㄤˋ）</span>，// 這裡<span class='text-brand-600 font-bold'>藏（ㄘㄤˊ）</span>著許多珍貴的台灣原生植物。// 每次來到大自然中，// 都會讓我進行深刻的反<span class='text-brand-600 font-bold'>省（ㄒㄧㄥˇ）</span>，// 思索著人類該如何節<span class='text-brand-600 font-bold'>省（ㄕㄥˇ）</span>資源、// 保護這片土地。// 看著高聳的千年神木，// 那流動在森林脈絡中的生機，// 讓人感受到無比震撼的<span class='text-brand-600 font-bold'>血（ㄒㄩㄝˇ）</span>液沸騰。//"
+  },
+  {
+    title: "第六篇短文：〈模範生的祕密〉",
+    focus: "多音字綜合訓練（模 ㄇㄨˊ、強 ㄑㄧㄤˊ、好 ㄏㄠˋ、強 ㄑㄧㄤˇ）",
+    text: "身為班上的<span class='text-brand-600 font-bold'>模（ㄇㄨˊ）</span>樣生，// 小美總是把自己的生活打理得井然有序。// 她不僅性情堅<span class='text-brand-600 font-bold'>強（ㄑㄧㄤˊ）</span>，// 而且非常喜<span class='text-brand-600 font-bold'>好（ㄏㄠˋ）</span>閱讀各類科普書籍。// 每當遇到不懂的難題時，// 她從不勉<span class='text-brand-600 font-bold'>強（ㄑㄧㄤˇ）</span>自己死記硬背，// 而是透過不斷地查閱資料與自我反省，// 把知識真正吸收進肚子裡。//"
+  }
 ];
 
 DB.forEach((q,i)=>{q.id="q"+i;q.raw=q.slots.join("").replace(/▲/g,"")});
@@ -204,6 +253,13 @@ const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&qu
 const stressHtml=s=>esc(s).replace(/▲/g,'<span class="text-amber-500 font-black">▲</span>');
 const markHtml=m=>m==="//"?'<span class="text-red-500 font-black mx-1.5">//</span>':m==="/"?'<span class="text-brand-500 font-black mx-1">/</span>':'';
 const marked=q=>q.slots.map((s,i)=>stressHtml(s)+markHtml(q.ans[i]||"")).join("");
+
+// 格式化短文內的標記符號
+function formatStoryText(htmlStr) {
+  return htmlStr
+    .replace(/\/\//g, '<span class="text-red-500 font-black mx-1.5">//</span>')
+    .replace(/\/(?!\/)/g, '<span class="text-brand-500 font-black mx-1">/</span>');
+}
  
 let solved=new Set();
 try{solved=new Set(JSON.parse(localStorage.getItem("reading_solved")||"[]"))}catch(e){}
@@ -211,7 +267,7 @@ const saveSolved=()=>{try{localStorage.setItem("reading_solved",JSON.stringify([
 const renderScore=()=>{$("score").textContent=solved.size*10+" 分"};
  
 function switchTab(name){
-  ["library","practice","record"].forEach(t=>$("sec-"+t).classList.toggle("hidden",t!==name));
+  ["library","practice","stories","record"].forEach(t=>$("sec-"+t).classList.toggle("hidden",t!==name));
   document.querySelectorAll(".tab").forEach(b=>{
     const on=b.dataset.tab===name;
     b.setAttribute("aria-selected",on);
@@ -255,6 +311,33 @@ function renderExamples(){
     </div>
   </article>`).join("");
   document.querySelectorAll(".speak").forEach(b=>b.onclick=()=>speak(DB[b.dataset.s].raw));
+}
+
+// 渲染朗讀短文庫
+function renderStories(){
+  $("stories-container").innerHTML = STORIES.map((s, i) => `
+    <article class="bg-white rounded-2xl p-5 border shadow-sm space-y-3">
+      <div class="flex justify-between items-center flex-wrap gap-2">
+        <div>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-50 text-indigo-600">短文 ${i+1}</span>
+          <h3 class="text-lg font-bold mt-1 text-slate-800">${esc(s.title)}</h3>
+        </div>
+        <button data-s="${i}" class="story-speak text-xs text-brand-600 bg-brand-50 hover:bg-brand-100 px-3 py-1.5 rounded-lg border border-brand-200 transition font-bold flex items-center gap-1">🔊 聆聽短文朗讀</button>
+      </div>
+      <div class="text-xs text-slate-500 bg-slate-50 px-3 py-1.5 rounded-lg">🎯 <b>訓練重點：</b>${esc(s.focus)}</div>
+      <div class="text-lg md:text-xl font-medium leading-relaxed bg-slate-50 p-4 rounded-xl text-slate-700">
+        ${formatStoryText(s.text)}
+      </div>
+    </article>
+  `).join("");
+
+  document.querySelectorAll(".story-speak").forEach(btn => {
+    btn.onclick = () => {
+      const idx = +btn.dataset.s;
+      const rawText = STORIES[idx].text.replace(/<[^>]*>/g, '').replace(/\/\//g, '').replace(/\//g, '');
+      speak(rawText);
+    };
+  });
 }
  
 let cur=0,marks=[],checked=false;
@@ -344,7 +427,7 @@ $("r-checks").innerHTML=[["1. 「/」處是否停頓半拍？","有，非常順�
  .map(([t,a,b],i)=>`<div class="bg-slate-50 p-4 rounded-xl border"><div class="font-semibold text-sm mb-2">${t}</div>
  <div class="flex gap-4 text-xs text-slate-600">${[a,b].map(l=>`<label class="flex items-center gap-1.5 cursor-pointer"><input type="radio" name="c${i}"> ${l}</label>`).join("")}</div></div>`).join("");
  
-renderCats();renderExamples();loadQ(0);renderScore();renderScript();switchTab("library");
+renderCats();renderExamples();renderStories();loadQ(0);renderScore();renderScript();switchTab("library");
 </script>
 </body>
 </html>
