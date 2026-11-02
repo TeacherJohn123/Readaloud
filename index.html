@@ -159,7 +159,7 @@ const DB=[
    st:[["主語（含修飾語）","長滿綠色青苔的古老石牆"],["謂語","隱密地矗立在"],["地點補語","充滿回憶的老街巷弄底"]],
    wrong:"長滿綠色青苔的古老石 / 牆隱密地矗立在充 / 滿回憶的老街巷弄底。",why:"主語名詞「石牆」被從中切斷，嚴重破壞文意。"},
   {c:"modifier",slots:["散發出陣陣花香的▲美麗花園","吸引了▲無數隻","五彩繽紛的▲美麗蝴蝶。"],ans:["//","/"],
-   st:[["主語（含修飾語）","散發出陣陣花香的美麗花園"],["謂語","吸引了無數隻"],["賓語","五彩繽紛的美麗蝴蝶"]],
+   st:[["主語（含修飾語）","散發出陣陣花香的美麗花園"],["謂語","吸引了無數隻","賓語","五彩繽紛的美麗蝴蝶"]],
    wrong:"散發出陣陣花香的美麗花 / 園吸引了無數隻五 / 彩繽紛的美麗蝴蝶。",why:"主語中心詞「花園」遭到拆解。"},
   {c:"modifier",slots:["沉睡在深海之中的▲神祕古船","靜靜地▲等待著","被世人發現的▲那一天。"],ans:["//","/"],
    st:[["主語（含修飾語）","沉睡在深海之中的神秘古船"],["謂語","靜靜地等待著"],["賓語","被世人發現的那一天"]],
@@ -212,7 +212,7 @@ const DB=[
    wrong:"聆聽海浪的呢喃聆聽微風的輕 / 拂聆聽大自然的樂 / 章讓我們忘卻所有煩惱。",why:"動賓結構的排比句沒有做到節奏等長、停頓一致。"}
 ];
 
-// 6篇朗讀短文庫資料 (純文字與注音，不內含裸露的 span 標籤)
+// 6篇朗讀短文庫資料
 const STORIES = [
   {
     title: "第一篇短文：〈友誼的藍色約定〉",
@@ -254,17 +254,13 @@ const stressHtml=s=>esc(s).replace(/▲/g,'<span class="text-amber-500 font-blac
 const markHtml=m=>m==="//"?'<span class="text-red-500 font-black mx-1.5">//</span>':m==="/"?'<span class="text-brand-500 font-black mx-1">/</span>':'';
 const marked=q=>q.slots.map((s,i)=>stressHtml(s)+markHtml(q.ans[i]||"")).join("");
 
-// 安全格式化短文內的標記符號與多音字注音
+// 安全格式化短文內的標記符號與多音字注音（單次掃描，避免二次替換破壞 HTML）
 function formatStoryText(plainText) {
-  // 先跳脫特殊字元防止 XSS
-  let escaped = esc(plainText);
-  // 將多音字括號內的注音標註加上醒目顏色
-  escaped = escaped.replace(/（([^）]+)）/g, '<span class="text-brand-600 font-bold">（$1）</span>');
-  // 將換氣與微停符號轉換為漂亮的帶色標記
-  escaped = escaped
-    .replace(/\/\//g, '<span class="text-red-500 font-black mx-1.5">//</span>')
-    .replace(/\/(?!\/)/g, '<span class="text-brand-500 font-black mx-1">/</span>');
-  return escaped;
+  return esc(plainText).replace(/（[^）]+）|\/\/|\//g, m => {
+    if (m === "//") return '<span class="text-red-500 font-black mx-1.5">//</span>';
+    if (m === "/")  return '<span class="text-brand-500 font-black mx-1">/</span>';
+    return '<span class="text-brand-600 font-bold">' + m + '</span>'; // 多音字注音
+  });
 }
  
 let solved=new Set();
