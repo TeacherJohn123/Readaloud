@@ -212,37 +212,37 @@ const DB=[
    wrong:"聆聽海浪的呢喃聆聽微風的輕 / 拂聆聽大自然的樂 / 章讓我們忘卻所有煩惱。",why:"動賓結構的排比句沒有做到節奏等長、停頓一致。"}
 ];
 
-// 6篇朗讀短文庫資料
+// 6篇朗讀短文庫資料 (純文字與注音，不內含裸露的 span 標籤)
 const STORIES = [
   {
     title: "第一篇短文：〈友誼的藍色約定〉",
     focus: "校園生活與多音字訓練（牛仔褲 ㄗˇ、情誼 ㄧˋ）",
-    text: "清晨的陽光灑在校園裡，// 穿著深藍色<span class='text-brand-600 font-bold'>牛仔褲（ㄗˇ）</span>的明遠，// 靜靜地坐在操場旁的長椅上。// 他手裡拿著一封信，// 那是轉學到外地的老朋友寄來的信。// 回想起兩人過去一起在圖書館裡，// 討論著深厚<span class='text-brand-600 font-bold'>情誼（ㄧˋ）</span>的點點滴滴，// 他的心中就充滿了溫暖。// 雖然分開在不同的城市，// 但是，// 他們心中的那份默契，// 卻永遠不會改變。//"
+    text: "清晨的陽光灑在校園裡，// 穿著深藍色牛仔褲（ㄗˇ）的明遠，// 靜靜地坐在操場旁的長椅上。// 他手裡拿著一封信，// 那是轉學到外地的老朋友寄來的信。// 回想起兩人過去一起在圖書館裡，// 討論著深厚情誼（ㄧˋ）的點點滴滴，// 他的心中就充滿了溫暖。// 雖然分開在不同的城市，// 但是，// 他們心中的那份默契，// 卻永遠不會改變。//"
   },
   {
     title: "第二篇短文：〈老街的轉角〉",
     focus: "環境描寫與多音字訓練（鋪 ㄆㄨ）",
-    text: "走進古色古香的老街，// 兩旁是斑駁的紅磚牆與木造房舍。// 轉角處，// 有一位老爺爺正坐在竹椅上，// 專心地轉動著手中的石磨，// <span class='text-brand-600 font-bold'>鋪（ㄆㄨ）</span>好乾淨的桌巾，// 準備賣香氣四溢的豆漿。// 這裡的一切，// 都讓人暫時忘卻了都市的喧囂。// 只要停下腳步，// 仔細聆聽，// 你就會發現，// 每一塊石板路似乎都在傾訴著歷史的故事。//"
+    text: "走進古色古香的老街，// 兩旁是斑駁的紅磚牆與木造房舍。// 轉角處，// 有一位老爺爺正坐在竹椅上，// 專心地轉動著手中的石磨，// 鋪（ㄆㄨ）好乾淨的桌巾，// 準備賣香氣四溢的豆漿。// 這裡的一切，// 都讓人暫時忘卻了都市的喧囂。// 只要停下腳步，// 仔細聆聽，// 你就會發現，// 每一塊石板路似乎都在傾訴著歷史的故事。//"
   },
   {
     title: "第三篇短文：〈晨曦中的微光〉",
     focus: "勵志成長與多音字訓練（角色 ㄐㄧㄝˊ ㄙㄜˋ）",
-    text: "在這齣名為成長的大戲裡，// 每個人都是自己生命的<span class='text-brand-600 font-bold'>角色（ㄐㄧㄝˊ ㄙㄜˋ）</span>。// 學習的道路上，// 難免會遇到重重困難與挑戰。// 因為，// 成功從來不是一蹴可幾的。// 只有當我們面對挫折時，// 依然能夠保持堅定的信念，// 勇敢地迎向前去，// 才能在終點線看見最耀眼的自己。//"
+    text: "在這齣名為成長的大戲裡，// 每個人都是自己生命的角色（ㄐㄧㄝˊ ㄙㄜˋ）。// 學習的道路上，// 難免會遇到重重困難與挑戰。// 因為，// 成功從來不是一蹴可幾的。// 只有當我們面對挫折時，// 依然能夠保持堅定的信念，// 勇敢地迎向前去，// 才能在終點線看見最耀眼的自己。//"
   },
   {
     title: "第四篇短文：〈音樂廳的後台〉",
     focus: "多音字綜合訓練（樂 ㄩㄝˋ/ㄌㄜˋ、強 ㄐㄧㄤˋ、中 ㄓㄨㄥˋ）",
-    text: "週末的午後，// 學校的管弦<span class='text-brand-600 font-bold'>樂（ㄩㄝˋ）</span>團// 正在音樂廳裡彩排。// 雖然練習的過程十分艱辛，// 個性有些倔<span class='text-brand-600 font-bold'>強（ㄐㄧㄤˋ）</span>的小華，// 但是並沒有因此而放棄。// 他深吸了一口氣，// 調整好心態，// 專心投<span class='text-brand-600 font-bold'>中（ㄓㄨㄥˋ）</span>每一個音符，// 演奏出最令人感動的<span class='text-brand-600 font-bold'>樂（ㄌㄜˋ）</span>章。//"
+    text: "週末的午後，// 學校的管弦樂（ㄩㄝˋ）團// 正在音樂廳裡彩排。// 雖然練習的過程十分艱辛，// 個性有些倔強（ㄐㄧㄤˋ）的小華，// 但是並沒有因此而放棄。// 他深吸了一口氣，// 調整好心態，// 專心投中（ㄓㄨㄥˋ）每一個音符，// 演奏出最令人感動的樂（ㄌㄜˋ）章。//"
   },
   {
     title: "第五篇短文：〈阿里山的寶藏〉",
     focus: "多音字綜合訓練（藏 ㄗㄤˋ/ㄘㄤˊ、省 ㄒㄧㄥˇ/ㄕㄥˇ、血 ㄒㄩㄝˇ）",
-    text: "台灣的山林充滿了豐富的寶<span class='text-brand-600 font-bold'>藏（ㄗㄤˋ）</span>，// 這裡<span class='text-brand-600 font-bold'>藏（ㄘㄤˊ）</span>著許多珍貴的台灣原生植物。// 每次來到大自然中，// 都會讓我進行深刻的反<span class='text-brand-600 font-bold'>省（ㄒㄧㄥˇ）</span>，// 思索著人類該如何節<span class='text-brand-600 font-bold'>省（ㄕㄥˇ）</span>資源、// 保護這片土地。// 看著高聳的千年神木，// 那流動在森林脈絡中的生機，// 讓人感受到無比震撼的<span class='text-brand-600 font-bold'>血（ㄒㄩㄝˇ）</span>液沸騰。//"
+    text: "台灣的山林充滿了豐富的寶藏（ㄗㄤˋ），// 這裡藏（ㄘㄤˊ）著許多珍貴的台灣原生植物。// 每次來到大自然中，// 都會讓我進行深刻的反省（ㄒㄧㄥˇ），// 思索著人類該如何節省（ㄕㄥˇ）資源、// 保護這片土地。// 看著高聳的千年神木，// 那流動在森林脈絡中的生機，// 讓人感受到無比震撼的血（ㄒㄩㄝˇ）液沸騰。//"
   },
   {
     title: "第六篇短文：〈模範生的祕密〉",
     focus: "多音字綜合訓練（模 ㄇㄨˊ、強 ㄑㄧㄤˊ、好 ㄏㄠˋ、強 ㄑㄧㄤˇ）",
-    text: "身為班上的<span class='text-brand-600 font-bold'>模（ㄇㄨˊ）</span>樣生，// 小美總是把自己的生活打理得井然有序。// 她不僅性情堅<span class='text-brand-600 font-bold'>強（ㄑㄧㄤˊ）</span>，// 而且非常喜<span class='text-brand-600 font-bold'>好（ㄏㄠˋ）</span>閱讀各類科普書籍。// 每當遇到不懂的難題時，// 她從不勉<span class='text-brand-600 font-bold'>強（ㄑㄧㄤˇ）</span>自己死記硬背，// 而是透過不斷地查閱資料與自我反省，// 把知識真正吸收進肚子裡。//"
+    text: "身為班上的模（ㄇㄨˊ）樣生，// 小美總是把自己的生活打理得井然有序。// 她不僅性情堅強（ㄑㄧㄤˊ），// 而且非常喜好（ㄏㄠˋ）閱讀各類科普書籍。// 每當遇到不懂的難題時，// 她從不勉強（ㄑㄧㄤˇ）自己死記硬背，// 而是透過不斷地查閱資料與自我反省，// 把知識真正吸收進肚子裡。//"
   }
 ];
 
@@ -254,11 +254,17 @@ const stressHtml=s=>esc(s).replace(/▲/g,'<span class="text-amber-500 font-blac
 const markHtml=m=>m==="//"?'<span class="text-red-500 font-black mx-1.5">//</span>':m==="/"?'<span class="text-brand-500 font-black mx-1">/</span>':'';
 const marked=q=>q.slots.map((s,i)=>stressHtml(s)+markHtml(q.ans[i]||"")).join("");
 
-// 格式化短文內的標記符號
-function formatStoryText(htmlStr) {
-  return htmlStr
+// 安全格式化短文內的標記符號與多音字注音
+function formatStoryText(plainText) {
+  // 先跳脫特殊字元防止 XSS
+  let escaped = esc(plainText);
+  // 將多音字括號內的注音標註加上醒目顏色
+  escaped = escaped.replace(/（([^）]+)）/g, '<span class="text-brand-600 font-bold">（$1）</span>');
+  // 將換氣與微停符號轉換為漂亮的帶色標記
+  escaped = escaped
     .replace(/\/\//g, '<span class="text-red-500 font-black mx-1.5">//</span>')
     .replace(/\/(?!\/)/g, '<span class="text-brand-500 font-black mx-1">/</span>');
+  return escaped;
 }
  
 let solved=new Set();
@@ -334,7 +340,8 @@ function renderStories(){
   document.querySelectorAll(".story-speak").forEach(btn => {
     btn.onclick = () => {
       const idx = +btn.dataset.s;
-      const rawText = STORIES[idx].text.replace(/<[^>]*>/g, '').replace(/\/\//g, '').replace(/\//g, '');
+      // 朗讀時移除所有標記符號與括號注音，確保語音合成順暢
+      const rawText = STORIES[idx].text.replace(/（[^）]+）/g, '').replace(/\/\//g, '').replace(/\//g, '');
       speak(rawText);
     };
   });
@@ -372,7 +379,7 @@ function checkAnswer(){
   const wrong=q.ans.map((a,i)=>marks[i]!==a).filter(Boolean).length;
   renderBox();
   const f=$("p-feedback");f.classList.remove("hidden");
-  const next=cur<DB.length-1?`<button id="p-next" class="mt-3 px-4 py-2 rounded-lg bg-brand-500 text-white text-sm font-bold">下一題 →</button>`:"";
+  const next=cur<DB.length-1?`<button class="mt-3 px-4 py-2 rounded-lg bg-brand-500 text-white text-sm font-bold" id="p-next">下一題 →</button>`:"";
   if(!wrong){
     const first=!solved.has(q.id);
     if(first){solved.add(q.id);saveSolved();renderScore();renderSelector()}
