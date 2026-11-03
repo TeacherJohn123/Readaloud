@@ -182,4 +182,270 @@ const DB=[
    st:[["前提","既然大家都已經達成共識"],["因果連詞","那麼"],["結果","我們就立刻開始執行計畫吧"]],
    wrong:"既然大家都已經達成共識那麼我們 / 就立刻開始執 / 行計畫吧！",why:"語意轉折處缺乏停頓，失去決策的果斷感。"},
   {c:"logic",slots:["雖然山路崎嶇難行","但是","沿途的風景","卻是無比的▲秀麗壯觀。"],ans:["//","/","/"],
-   st
+   st:[["讓步","雖然山路崎嶇難行"],["轉折連詞","但是"],["結果","沿途的風景卻是無比的秀麗壯觀"]],
+   wrong:"雖然山路崎嶇難行但是沿途 / 的風景卻是無 / 比的秀麗壯觀。",why:"轉折詞「但是」前後未正確切割，失去了對比感。"},
+  {c:"logic",slots:["因為昨晚熬夜準備考試的緣故","所以","他今天上課時","顯得有些▲精神不振。"],ans:["//","/","/"],
+   st:[["原因","因為昨晚熬夜準備考試的緣故"],["因果連詞","所以"],["結果","他今天上課時顯得有些精神不振"]],
+   wrong:"因為昨晚熬夜準備考試的緣故所以他 / 今天上課時顯 / 得有些精神不振。",why:"長原因狀語結束後未作換氣停頓。"},
+  {c:"logic",slots:["即使遭遇再大的挫折","我們也","絕對不能輕言▲放棄","心中的▲理想。"],ans:["//","/","/"],
+   st:[["讓步條件","即使遭遇再大的挫折"],["結果主句","我們也絕對不能輕言放棄心中的理想"]],
+   wrong:"即使遭遇再大的挫折我們也絕 / 對不能輕言放 / 棄心中的理想。",why:"條件分句與主句連在一起，削弱了堅定的語氣。"},
+
+  // 排比與列舉句 (25-30)
+  {c:"parallel",slots:["走過翠綠的▲田野","走過金黃的▲稻浪","走過喧鬧的▲市集","我們終於來到美麗的大海。"],ans:["//","//","//"],
+   st:[["排比一","走過翠綠的田野"],["排比二","走過金黃的稻浪"],["排比三","走過喧鬧的市集"],["總結","我們終於來到美麗的大海"]],
+   wrong:"走過翠綠的田野走過金黃的 / 稻浪走過喧鬧的市集 / 我們終於來到美麗的大海。",why:"排比句沒有維持對等的停頓節奏，聽起來凌亂、沒有韻律。"},
+  {c:"parallel",slots:["看看天上的▲明月","看看閃爍的▲繁星","看看寧靜的▲夜空","心中感到無比的▲平靜。"],ans:["//","//","//"],
+   st:[["排比一","看看天上的明月"],["排比二","看看閃爍的繁星"],["排比三","看看寧靜的夜空"],["總結","心中感到無比的平靜"]],
+   wrong:"看看天上的明月看看閃爍的繁 / 星看看寧靜的夜 / 空心中感到無比的平靜。",why:"排比結構被任意切碎，失去整齊的對稱美感。"},
+  {c:"parallel",slots:["春天的百花▲競開","夏日的綠樹▲成蔭","秋天的楓葉▲如火","冬日的白雪▲皚皚。"],ans:["//","//","//"],
+   st:[["春季","春天的百花競開"],["夏季","夏日的綠樹成蔭"],["秋季","秋天的楓葉如火"],["冬季","冬日的白雪皚皚"]],
+   wrong:"春天的百花競開夏日的綠樹成 / 蔭秋天的楓葉如 / 火冬日的白雪皚皚。",why:"四季並列排比句未按段落節奏停頓。"},
+  {c:"parallel",slots:["有的人喜歡爬山▲健行","有的人喜歡閱讀▲書籍","有的人喜歡揮毫▲作畫","每個人都有自己的▲興趣。"],ans:["//","//","//"],
+   st:[["列舉一","有的人喜歡爬山健行"],["列舉二","有的人喜歡閱讀書籍"],["列舉三","有的人喜歡揮毫作畫"],["總結","每個人都有自己的興趣"]],
+   wrong:"有的人喜歡爬山健行有的人喜 / 歡閱讀書籍有的人 / 喜歡揮毫作畫每個人都有興趣。",why:"多人群像列舉句失去了分明的段落感。"},
+  {c:"parallel",slots:["書本是我們的良師▲益友","書本是我們的心靈▲良藥","書本是我們的啟蒙▲明燈","引領我們走向▲未來。"],ans:["//","//","//"],
+   st:[["排比一","書本是我們的良師益友"],["排比二","書本是我們的心靈良藥"],["排比三","書本是我們的啟蒙明燈"],["總結","引領我們走向未來"]],
+   wrong:"書本是我們的良師益友書本是 / 我們的心靈良藥書本 / 是我們的啟蒙明燈。",why:"喻體排比句節奏紊亂，失去了讚頌的氣勢。"},
+  {c:"parallel",slots:["聆聽海浪的▲呢喃","聆聽微風的輕拂","聆聽大自然的▲樂章","讓我們忘卻所有▲煩惱。"],ans:["//","//","//"],
+   st:[["排比一","聆聽海浪的呢喃"],["排比二","聆聽微風的輕拂"],["排比三","聆聽大自然的樂章"],["總結","讓我們忘卻所有煩惱"]],
+   wrong:"聆聽海浪的呢喃聆聽微風的輕 / 拂聆聽大自然的樂 / 章讓我們忘卻所有煩惱。",why:"動賓結構的排比句沒有做到節奏等長、停頓一致。"}
+];
+
+// 9篇朗讀短文庫資料 (包含原有6篇 + 新增3篇)
+const STORIES = [
+  {
+    title: "第一篇短文：〈友誼的藍色約定〉",
+    focus: "校園生活與多音字訓練（牛仔褲 ㄗˇ、情誼 ㄧˋ）",
+    text: "清晨的陽光灑在校園裡，// 穿著深藍色牛仔褲（ㄗˇ）的明遠，// 靜靜地坐在操場旁的長椅上。// 他手裡拿著一封信，// 那是轉學到外地的老朋友寄來的信。// 回想起兩人過去一起在圖書館裡，// 討論著深厚情誼（ㄧˋ）的點點滴滴，// 他的心中就充滿了溫暖。// 雖然分開在不同的城市，// 但是，// 他們心中的那份默契，// 卻永遠不會改變。//"
+  },
+  {
+    title: "第二篇短文：〈老街的轉角〉",
+    focus: "環境描寫與多音字訓練（鋪 ㄆㄨ）",
+    text: "走進古色古香的老街，// 兩旁是斑駁的紅磚牆與木造房舍。// 轉角處，// 有一位老爺爺正坐在竹椅上，// 專心地轉動著手中的石磨，// 鋪（ㄆㄨ）好乾淨的桌巾，// 準備賣香氣四溢的豆漿。// 這裡的一切，// 都讓人暫時忘卻了都市的喧囂。// 只要停下腳步，// 仔細聆聽，// 你就會發現，// 每一塊石板路似乎都在傾訴著歷史的故事。//"
+  },
+  {
+    title: "第三篇短文：〈晨曦中的微光〉",
+    focus: "勵志成長與多音字訓練（角色 ㄐㄩㄝˊ ㄙㄜˋ、管弦樂 ㄒㄧㄢˊ）",
+    text: "在這齣名為成長的大戲裡，// 每個人都是自己生命的管弦樂（ㄒㄧㄢˊ）團中不可或缺的角色（ㄐㄩㄝˊ ㄙㄜˋ）。// 學習的道路上，// 難免會遇到重重困難與挑戰。// 因為，// 成功從來不是一蹴可幾的。// 只有當我們面對挫折時，// 依然能夠保持堅定的信念，// 勇敢地迎向前去，// 才能在終點線看見最耀眼的自己。//"
+  },
+  {
+    title: "第四篇短文：〈音樂廳的後台〉",
+    focus: "多音字綜合訓練（樂 ㄩㄝˋ/ㄌㄜˋ、強 ㄐㄧㄤˋ、中 ㄓㄨㄥˋ）",
+    text: "週末的午後，// 學校的管弦樂（ㄩㄝˋ）團// 正在音樂廳裡彩排。// 雖然練習的過程十分艱辛，// 個性有些倔強（ㄐㄧㄤˋ）的小華，// 但是並沒有因此而放棄。// 他深吸了一口氣，// 調整好心態，// 專心投中（ㄓㄨㄥˋ）每一個音符，// 演奏出最令人感動的樂（ㄌㄜˋ）章。//"
+  },
+  {
+    title: "第五篇短文：〈阿里山的寶藏〉",
+    focus: "多音字綜合訓練（藏 ㄗㄤˋ/ㄘㄤˊ、省 ㄒㄧㄥˇ/ㄕㄥˇ、血 ㄒㄩㄝˇ）",
+    text: "台灣的山林充滿了豐富的寶藏（ㄗㄤˋ），// 這裡藏（ㄘㄤˊ）著許多珍貴的台灣原生植物。// 每次來到大自然中，// 都會讓我進行深刻的反省（ㄒㄧㄥˇ），// 思索著人類該如何節省（ㄕㄥˇ）資源、// 保護這片土地。// 看著高聳的千年神木，// 那流動在森林脈絡中的生機，// 讓人感受到無比震撼的血（ㄒㄩㄝˇ）液沸騰。//"
+  },
+  {
+    title: "第六篇短文：〈模範生的祕密〉",
+    focus: "多音字綜合訓練（模 ㄇㄨˊ、強 ㄑㄧㄤˊ、好 ㄏㄠˋ、強 ㄑㄧㄤˇ）",
+    text: "身為班上的模（ㄇㄨˊ）樣生，// 小美總是把自己的生活打理得井然有序。// 她不僅性情堅強（ㄑㄧㄤˊ），// 而且非常喜好（ㄏㄠˋ）閱讀各類科普書籍。// 每當遇到不懂的難題時，// 她從不勉強（ㄑㄧㄤˇ）自己死記硬背，// 而是透過不斷地查閱資料與自我反省，// 把知識真正吸收進肚子裡。//"
+  },
+  {
+    title: "第七篇短文：〈山林與溪流的探索〉",
+    focus: "新增多音字訓練（煩悶 ㄇㄣˋ、潔癖 ㄆㄧˇ、追溯 ㄙㄨˋ、急湍 ㄊㄨㄢ、不勝 ㄕㄥ 歡喜）",
+    text: "面對課業的煩悶（ㄇㄣˋ），// 有時我們需要走進大自然來放鬆身心。// 來到溪谷旁，// 湍急的急湍（ㄊㄨㄢ）水流拍打著岩石。// 喜愛大自然的生態學家帶著追溯（ㄙㄨˋ）源頭的精神，// 觀察著沿途的生態。// 縱使有些微的潔癖（ㄆㄧˇ），// 大家依然在大自然中玩得不勝（ㄕㄥ）歡喜。//"
+  },
+  {
+    title: "第八篇短文：〈鐵道旁的驚險瞬間〉",
+    focus: "新增多音字訓練（勒 ㄌㄟ、塑膠杯 ㄙㄨ、不著痕跡 ㄓㄨㄛˊ、淘空 ㄊㄠˊ）",
+    text: "午後的雷雨突如其來，// 湍急的水流將河岸旁的土壤漸漸淘空（ㄊㄠˊ）。// 遠處的縱（ㄗㄨㄥ）貫鐵路旁，// 一名工人急忙用繩索勒（ㄌㄟ）緊防汛袋。// 他隨手將喝完的塑膠（ㄙㄨ）杯丟進垃圾桶，// 以不著（ㄓㄨㄛˊ）痕跡的俐落身手，// 迅速完成了防颱準備。//"
+  },
+  {
+    title: "第九篇短文：〈站台上的告別〉",
+    focus: "新增多音字訓練（按捺不住 ㄋㄚˋ、惋惜 ㄨㄢˋ、臉漲紅 ㄓㄤˋ）",
+    text: "火車即將進站，// 離別的時刻終於到來。// 看著即將遠行的摯友，// 他心中有說不出的惋惜（ㄨㄢˋ）。// 面對突如其來的離別，// 他按捺（ㄋㄚˋ）不住內心的情緒，// 臉刷地漲（ㄓㄤˋ）得通紅。// 火車緩緩啟動，// 載著滿滿的回憶駛向遠方。//"
+  }
+];
+
+DB.forEach((q,i)=>{q.id="q"+i;q.raw=q.slots.join("").replace(/▲/g,"")});
+ 
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const stressHtml=s=>esc(s).replace(/▲/g,'<span class="text-amber-500 font-black">▲</span>');
+const markHtml=m=>m==="//"?'<span class="text-red-500 font-black mx-1.5">//</span>':m==="/"?'<span class="text-brand-500 font-black mx-1">/</span>':'';
+const marked=q=>q.slots.map((s,i)=>stressHtml(s)+markHtml(q.ans[i]||"")).join("");
+
+// 安全格式化短文內的標記符號與多音字注音（單次掃描，避免二次替換破壞 HTML）
+function formatStoryText(plainText) {
+  return esc(plainText).replace(/（[^）]+）|\/\/|\//g, m => {
+    if (m === "//") return '<span class="text-red-500 font-black mx-1.5">//</span>';
+    if (m === "/")  return '<span class="text-brand-500 font-black mx-1">/</span>';
+    return '<span class="text-brand-600 font-bold">' + m + '</span>'; // 多音字注音
+  });
+}
+ 
+let solved=new Set();
+try{solved=new Set(JSON.parse(localStorage.getItem("reading_solved")||"[]"))}catch(e){}
+const saveSolved=()=>{try{localStorage.setItem("reading_solved",JSON.stringify([...solved]))}catch(e){}};
+const renderScore=()=>{$("score").textContent=solved.size*10+" 分"};
+ 
+function switchTab(name){
+  ["library","practice","stories","record"].forEach(t=>$("sec-"+t).classList.toggle("hidden",t!==name));
+  document.querySelectorAll(".tab").forEach(b=>{
+    const on=b.dataset.tab===name;
+    b.setAttribute("aria-selected",on);
+    b.className="tab px-3 py-2 rounded-lg text-sm "+(on?"bg-brand-50 text-brand-600 font-semibold":"text-slate-600 hover:bg-slate-100");
+  });
+}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));
+ 
+function speak(text){
+  if(!("speechSynthesis" in window)){alert("您的瀏覽器不支援語音合成功能！");return}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang="zh-TW";u.rate=0.85;
+  const v=speechSynthesis.getVoices().find(v=>v.lang.replace("_","-")==="zh-TW");
+  if(v)u.voice=v;
+  speechSynthesis.speak(u);
+}
+ 
+let cat="all";
+function renderCats(){
+  const btn=(k,l,n)=>`<button data-k="${k}" class="px-3 py-1.5 rounded-lg text-xs font-bold ${cat===k?"bg-brand-500 text-white":"bg-slate-100 text-slate-600 hover:bg-slate-200"}">${l} (${n})</button>`;
+  $("cat-tabs").innerHTML=btn("all","全部",DB.length)+Object.keys(CATS).map(k=>btn(k,CATS[k],DB.filter(q=>q.c===k).length)).join("");
+  $("cat-tabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{cat=b.dataset.k;renderCats();renderExamples()});
+}
+function renderExamples(){
+  const list=DB.map((q,i)=>[q,i]).filter(([q])=>cat==="all"||q.c===cat);
+  $("examples").innerHTML=list.map(([q,i])=>`
+  <article class="bg-white rounded-2xl p-5 border shadow-sm space-y-3">
+    <div class="flex justify-between items-center">
+      <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-50 text-brand-600">${CATS[q.c]} (第 ${i+1} 題)</span>
+      <button data-s="${i}" class="speak text-xs text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md border">🔊 聆聽朗讀</button>
+    </div>
+    <div class="text-xl md:text-2xl font-bold leading-relaxed bg-slate-50 p-4 rounded-xl">${marked(q)}</div>
+    <div class="bg-indigo-50/60 rounded-xl p-4 border border-indigo-100 text-sm grid md:grid-cols-2 gap-1.5">
+      ${q.st.map(([k,v])=>`<div><b class="text-indigo-700">${esc(k)}：</b>${esc(v)}</div>`).join("")}
+    </div>
+    <div class="bg-red-50/60 rounded-xl p-4 border border-red-100 space-y-1">
+      <div class="text-xs font-bold text-red-600">⚠ 常見錯誤斷句：</div>
+      <p class="text-sm line-through decoration-red-400">${esc(q.wrong)}</p>
+      <p class="text-xs text-red-700/80"><b>盲點剖析：</b>${esc(q.why)}</p>
+    </div>
+  </article>`).join("");
+  document.querySelectorAll(".speak").forEach(b=>b.onclick=()=>speak(DB[b.dataset.s].raw));
+}
+
+// 渲染朗讀短文庫
+function renderStories(){
+  $("stories-container").innerHTML = STORIES.map((s, i) => `
+    <article class="bg-white rounded-2xl p-5 border shadow-sm space-y-3">
+      <div class="flex justify-between items-center flex-wrap gap-2">
+        <div>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-50 text-indigo-600">短文 ${i+1}</span>
+          <h3 class="text-lg font-bold mt-1 text-slate-800">${esc(s.title)}</h3>
+        </div>
+        <button data-s="${i}" class="story-speak text-xs text-brand-600 bg-brand-50 hover:bg-brand-100 px-3 py-1.5 rounded-lg border border-brand-200 transition font-bold flex items-center gap-1">🔊 聆聽短文朗讀</button>
+      </div>
+      <div class="text-xs text-slate-500 bg-slate-50 px-3 py-1.5 rounded-lg">🎯 <b>訓練重點：</b>${esc(s.focus)}</div>
+      <div class="text-lg md:text-xl font-medium leading-relaxed bg-slate-50 p-4 rounded-xl text-slate-700">
+        ${formatStoryText(s.text)}
+      </div>
+    </article>
+  `).join("");
+
+  document.querySelectorAll(".story-speak").forEach(btn => {
+    btn.onclick = () => {
+      const idx = +btn.dataset.s;
+      // 朗讀時移除所有標記符號與括號注音，確保語音合成順暢
+      const rawText = STORIES[idx].text.replace(/（[^）]+）/g, '').replace(/\/\//g, '').replace(/\//g, '');
+      speak(rawText);
+    };
+  });
+}
+ 
+let cur=0,marks=[],checked=false;
+function renderSelector(){
+  $("p-select").innerHTML=DB.map((q,i)=>`<button data-i="${i}" class="w-9 h-9 rounded-lg text-xs font-bold ${i===cur?"bg-brand-500 text-white":solved.has(q.id)?"bg-emerald-100 text-emerald-700":"bg-slate-100 text-slate-600 hover:bg-slate-200"}">${i+1}</button>`).join("");
+  $("p-select").querySelectorAll("button").forEach(b=>b.onclick=()=>loadQ(+b.dataset.i));
+}
+function loadQ(i){
+  cur=i;checked=false;marks=new Array(DB[i].slots.length-1).fill("");
+  $("p-tag").textContent=`第 ${i+1} 題 - ${CATS[DB[i].c]}`;
+  $("p-feedback").classList.add("hidden");
+  renderSelector();renderBox();
+}
+function renderBox(){
+  const q=DB[cur];
+  $("p-box").innerHTML=q.slots.map((s,i)=>{
+    let h=`<span>${esc(s.replace(/▲/g,""))}</span>`;
+    if(i<marks.length){
+      const m=marks[i],bad=checked&&m!==q.ans[i];
+      const cls=m==="/"?"bg-brand-50 text-brand-600 border-brand-500":m==="//"?"bg-red-50 text-red-500 border-red-400":"bg-slate-100 text-slate-400 border-dashed border-slate-300";
+      h+=`<button data-i="${i}" aria-label="第${i+1}個停頓位置" class="slot-btn mx-1 px-2.5 py-0.5 rounded-md border text-sm font-black ${cls} ${bad?"ring-2 ring-amber-500":""} ${checked&&!bad?"ring-2 ring-emerald-400":""}">${m||"＋"}</button>`;
+    }
+    return h;
+  }).join("");
+  $("p-box").querySelectorAll("button").forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i;marks[i]=marks[i]===""?"/":marks[i]==="/"?"//":"";
+    checked=false;$("p-feedback").classList.add("hidden");renderBox();
+  });
+}
+function checkAnswer(){
+  const q=DB[cur];checked=true;
+  const wrong=q.ans.map((a,i)=>marks[i]!==a).filter(Boolean).length;
+  renderBox();
+  const f=$("p-feedback");f.classList.remove("hidden");
+  const next=cur<DB.length-1?`<button class="mt-3 px-4 py-2 rounded-lg bg-brand-500 text-white text-sm font-bold" id="p-next">下一題 →</button>`:"";
+  if(!wrong){
+    const first=!solved.has(q.id);
+    if(first){solved.add(q.id);saveSolved();renderScore();renderSelector()}
+    f.className="rounded-xl p-5 border bg-emerald-50 border-emerald-200 text-emerald-900";
+    f.innerHTML=`<div class="font-bold text-lg text-emerald-700 mb-1">🎉 標記完全正確！${first?"＋10 分":"（本題已得過分）"}</div>
+      <div class="text-sm bg-white/80 p-3 rounded-lg font-medium">${CATS[q.c]}：${marked(q)}</div>${next}`;
+  }else{
+    f.className="rounded-xl p-5 border bg-amber-50 border-amber-200 text-amber-900";
+    f.innerHTML=`<div class="font-bold text-lg text-amber-800 mb-1">還有 ${wrong} 處不同（橘框為需修正、綠框為正確）</div>
+      <div class="text-base font-bold bg-white p-3 rounded-lg border border-amber-200 mb-2">${marked(q)}</div>
+      <p class="text-xs"><b>提示：</b>先找出核心動作，動作前的修飾成分不要太早切斷。</p>${next}`;
+  }
+  if($("p-next"))$("p-next").onclick=()=>loadQ(cur+1);
+}
+$("p-reset").onclick=()=>loadQ(cur);
+$("p-check").onclick=checkAnswer;
+$("p-listen").onclick=()=>speak(DB[cur].raw);
+ 
+let rec=null,chunks=[],recording=false,timer=null,secs=0,audioUrl=null;
+function renderScript(){$("r-script").innerHTML=marked(DB[+$("r-select").value])}
+async function toggleRec(){
+  if(!recording){
+    if(!navigator.mediaDevices||!window.MediaRecorder){alert("此瀏覽器不支援錄音功能。");return}
+    try{
+      const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      const mime=["audio/webm","audio/mp4"].find(t=>MediaRecorder.isTypeSupported(t));
+      rec=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);chunks=[];
+      rec.ondataavailable=e=>e.data.size&&chunks.push(e.data);
+      rec.onstop=()=>{
+        stream.getTracks().forEach(t=>t.stop());
+        if(audioUrl)URL.revokeObjectURL(audioUrl);
+        audioUrl=URL.createObjectURL(new Blob(chunks,{type:rec.mimeType}));
+        $("r-audio").src=audioUrl;
+      };
+      rec.start();recording=true;setRecUI(true);
+      secs=0;$("r-timer").textContent="00:00";
+      timer=setInterval(()=>{secs++;$("r-timer").textContent=String(secs/60|0).padStart(2,"0")+":"+String(secs%60).padStart(2,"0")},1000);
+    }catch(e){alert("無法存取麥克風，請確認已授權。")}
+  }else{
+    rec.stop();recording=false;clearInterval(timer);setRecUI(false);
+  }
+}
+function setRecUI(on){
+  $("r-btn").textContent=on?"■":"🎙";
+  $("r-btn").className="w-16 h-16 rounded-full text-2xl active:scale-95 transition "+(on?"bg-slate-600 animate-pulse":"bg-red-500 hover:bg-red-600");
+  $("r-status").textContent=on?"錄音中…":"準備就緒";
+}
+$("r-btn").onclick=toggleRec;
+$("r-select").innerHTML=DB.map((q,i)=>`<option value="${i}">例句 ${i+1}：${esc(q.raw.slice(0,16))}…</option>`).join("");
+$("r-select").onchange=renderScript;
+$("r-checks").innerHTML=[["1. 「/」處是否停頓半拍？","有，非常順暢","稍顯太快"],["2. 「//」處是否平穩換氣？","氣息充足","差點斷氣"],["3. 重音關鍵字是否強調？","有讀出感情","稍微平淡"]]
+ .map(([t,a,b],i)=>`<div class="bg-slate-50 p-4 rounded-xl border"><div class="font-semibold text-sm mb-2">${t}</div>
+ <div class="flex gap-4 text-xs text-slate-600">${[a,b].map(l=>`<label class="flex items-center gap-1.5 cursor-pointer"><input type="radio" name="c${i}"> ${l}</label>`).join("")}</div></div>`).join("");
+ 
+renderCats();renderExamples();renderStories();loadQ(0);renderScore();renderScript();switchTab("library");
+</script>
+</body>
+</html>
